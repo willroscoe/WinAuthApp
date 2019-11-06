@@ -1,0 +1,36 @@
+﻿@page
+@model WinAuthApp.Pages.PrincipleModel
+@{
+    ViewData["Title"] = "Principle";
+}
+
+<h1>Principle</h1>
+
+<p>@Model.TheUser.GivenName @Model.TheUser.Surname</p>
+<p>@Model.TheUser.HomeDirectory</p>
+<p>@Model.TheUser.EmailAddress</p>
+<p>@Model.TheUser.VoiceTelephoneNumber</p>
+<p>@Model.TheUser.EmployeeId</p>
+<p>@Model.TheUser.Guid</p>
+<p>@Model.TheUser.SamAccountName</p>
+@foreach (var group in Model.Groups)
+{
+    <span>@group</span>
+    <br />
+}
+
+<h2>All Users</h2>
+@foreach (var user in Model.AllUsers)
+{
+    <span>@user</span>
+    <br />
+}
+
+<h2>All Groups</h2>
+@foreach (var group in Model.AllGroups)
+{
+    <span>@group</span>
+    <br />
+}
+
+
